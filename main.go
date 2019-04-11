@@ -273,5 +273,8 @@ func main() {
 			return
 		}
 	})
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "OK")
+	})
 	log.Fatal(http.ListenAndServe(*listen, nil))
 }
